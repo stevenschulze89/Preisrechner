@@ -1,0 +1,35 @@
+#hero {
+  width: 85%;
+}
+
+table {
+  background-color: green;
+  width: 100%;
+  height: 50vh;
+  gap: 1px;
+}
+
+td:hover {
+  color: brown;
+}
+
+#hinzufügen {
+  background-color: red;
+  width: 100%;
+  margin-bottom: 3px;
+  height: 32px;
+}
+#buttons {
+  display: flex;
+  gap: 1px;
+}
+#Liefern {
+  background-color: blue;
+  width: 50%;
+  height: 35px;
+}
+
+#eat {
+  background-color: chartreuse;
+  width: 50%;
+}
