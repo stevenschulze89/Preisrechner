@@ -4,17 +4,14 @@
   align-items: stretch;
 }
 
-#content {
-  width: 80%;
-}
-.header {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-}
 table {
   background-color: gray;
   width: 100%;
+}
+.header {
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 tr {
@@ -58,7 +55,8 @@ td:hover {
 #Bestellung {
   background-color: red;
   margin-left: 1px;
-  width: 30%;
+  width: 25%;
   display: flex;
+  text-decoration: underline;
   text-align: start;
 }
