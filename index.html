@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preisrechner</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+      const preise = [
+        15.0, 13.0, 9.0, 7.0, 7.5, 8.0, 13.0, 11.0, 2.0, 3.0, 5.0, 4.0, 4.0,
+        5.0, 5.0,
+      ];
+      let summe = 0;
+
+      function hinzufügen(index) {
+        summe += preis[index];
+        document.getElementById("ergebniss").textContent =
+          "Gesammt:" + summe.toFixed(2) + "€";
+      }
+
+      console.log("Gesamt: " + summe + "€");
+    </script>
   </head>
   <body>
     <section id="hero">
       <div id="content">
+        <h1 class="header">Preisrechner</h1>
         <table>
-          <h1 class="header">Preisrechner</h1>
           <tr>
             <td>Zwiebelschnitzel <br />15.00€</td>
             <td>
@@ -40,7 +55,7 @@
           </tr>
         </table>
 
-        <span class="ergebniss">Gesamt:</span>
+        <span id="ergebniss">Gesamt: 0,00€</span>
 
         <button id="hinzufügen">Hinzufügen</button>
         <div id="buttons">

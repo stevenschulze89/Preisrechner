@@ -47,9 +47,8 @@ td:hover {
 #ergebniss {
   display: flex;
   align-items: center;
-  height: 8vh;
-  background-color: aqua;
-  font-size: 28px;
+
+  font-size: 20px;
 }
 
 #Bestellung {
