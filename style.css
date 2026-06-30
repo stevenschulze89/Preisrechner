@@ -8,4 +8,35 @@
 .container-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: chartreuse;
+  gap: 2rem;
+  width: 100%;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+}
+
+.gesamt {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
