@@ -1,20 +1,20 @@
-* {
-  margin: 0 auto;
+h1 {
+  display: flex;
+  justify-content: center;
 }
 
 .main {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
   max-width: 1200px;
+  gap: 2px;
 }
 
 .Container-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: chartreuse;
-  gap: 2rem;
-  width: 100%;
 }
 
 .grid-item {
@@ -24,6 +24,18 @@
   justify-content: center;
 }
 
+.kasten {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 125px;
+  height: 50px;
+}
+.kasten:hover {
+  cursor: pointer;
+  background-color: antiquewhite;
+}
 .preis {
   color: blue;
 }
@@ -34,6 +46,8 @@
 }
 .buttons {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 
   gap: 1rem;
 }
@@ -41,17 +55,46 @@
 .reset {
   display: flex;
   justify-content: center;
+  background-color: red;
+  margin-bottom: 1px;
 }
 
-.gesamt {
+.here {
+  display: flex;
+  justify-content: center;
+  background-color: greenyellow;
+  width: 50%;
+}
+
+.Liefern {
+  background-color: rgba(0, 140, 255, 0.555);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#gesamt {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   color: blue;
 }
 
+.gesamt {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  gap: 1px;
+}
+
+.bestellung {
+  display: flex;
+  width: 20%;
+  background-color: beige;
+  height: 21vh;
 }
