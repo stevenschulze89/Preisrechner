@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,6 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preisrechner</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.grid-item');
+  items.forEach(item => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => {
+      item.classList.toggle('selected');
+      updateTotal();
+    });
+  });
+
+  const resetBtn = document.querySelector('.reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      document.querySelectorAll('.grid-item.selected').forEach(i => i.classList.remove('selected'));
+      updateTotal();
+    });
+  }
+});
+
+function updateTotal() {
+  const selected = document.querySelectorAll('.grid-item.selected');
+  let total = 0;
+  selected.forEach(item => {
+    const preisEl = item.querySelector('.preis');
+    if (!preisEl) return;
+    const priceText = preisEl.textContent.replace('€', '').trim();
+    const normalized = priceText.replace(',', '.');
+    const price = parseFloat(normalized) || 0;
+    total += price;
+  });
+
+  const display = total.toFixed(2).replace('.', ',') + '€';
+  const gesamtEl = document.getElementById('gesamt');
+  if (gesamtEl) gesamtEl.textContent = display;
+  console.log('Total updated:', display);
+
+  // Update order list view
+  const orderList = document.querySelector('.order-list');
+  if (orderList) {
+    orderList.innerHTML = '';
+    if (selected.length === 0) {
+      orderList.textContent = 'Keine Artikel';
+    } else {
+      selected.forEach(item => {
+        const preisEl = item.querySelector('.preis');
+        const priceText = preisEl ? preisEl.textContent.trim() : '';
+        const name = preisEl ? item.textContent.replace(preisEl.textContent, '').trim() : item.textContent.trim();
+        const entry = document.createElement('div');
+        entry.className = 'order-item';
+        entry.textContent = `${name} — ${priceText}`;
+        orderList.appendChild(entry);
+      });
+    }
+  }
+}
+
+    </script>
   </head>
   <body>
     <div class="Container">
@@ -106,7 +165,10 @@
           </div>
         </div>
 
-        <div class="bestellung">Bestellung</div>
+        <div class="bestellung">
+          <h2>Bestellung</h2>
+          <div class="order-list"></div>
+        </div>
       </div>
     </div>
   </body>
