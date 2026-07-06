@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preisrechner</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
   </head>
   <body>
     <div class="Container">
@@ -12,82 +13,86 @@
       <div class="main">
         <div class="left">
           <div class="Container-grid">
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(7.5, 'Margherita')">
               <div class="grid-item">
                 Margherita<span class="preis">7.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.5, 'Pepperoni')">
               <div class="grid-item">
                 Pepperoni<span class="preis">8.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.5, 'Hawaiiana')">
               <div class="grid-item">
                 Hawaiiana<span class="preis">8.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div
+              class="kasten"
+              onclick="addItemToOrder(29.0, 'Familien Pizza')"
+            >
               <div class="grid-item">
-                Carbonara<span class="preis">8.00€</span>
+                Familien Pizza<span class="preis">29.00€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(9.0, 'Prosciutto')">
               <div class="grid-item">
                 Prosciutto<span class="preis">9.00€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.0, 'Vegetariana')">
               <div class="grid-item">
                 Vegetariana<span class="preis">8.00€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(9.0, 'BBQ Chicken')">
               <div class="grid-item">
                 BBQ Chicken<span class="preis">9.00€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div
+              class="kasten"
+              onclick="addItemToOrder(9.5, 'Quattro Formaggi')"
+            >
               <div class="grid-item">
                 Quattro Formaggi<span class="preis">9.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.5, 'Diavolo')">
               <div class="grid-item">
                 Diavolo<span class="preis">8.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(9.5, 'Tonno')">
               <div class="grid-item">
                 Seafood<span class="preis">10.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.5, 'Spinaci')">
               <div class="grid-item">
                 Spinaci<span class="preis">8.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.5, 'Caprese')">
               <div class="grid-item">
                 Caprese<span class="preis">8.50€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.0, 'Döner')">
+              Döner<span class="preis">8.00€</span>
+            </div>
+            <div class="kasten" onclick="addItemToOrder(9.5, 'Rustica')">
               <div class="grid-item">
-                Funghi<span class="preis">8.00€</span>
+                Rustica<span class="preis">9.50€</span>
               </div>
             </div>
-            <div class="kasten">
-              <div class="grid-item">
-                Rustica<span class="preis">9.00€</span>
-              </div>
-            </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(8.0, 'Napoletana')">
               <div class="grid-item">
                 Napoletana<span class="preis">8.00€</span>
               </div>
             </div>
-            <div class="kasten">
+            <div class="kasten" onclick="addItemToOrder(9.5, 'Calzone')">
               <div class="grid-item">
                 Calzone<span class="preis">9.50€</span>
               </div>
@@ -101,12 +106,17 @@
           <div class="buttons-container">
             <div class="buttons">
               <div class="here">Vor Ort</div>
-              <div class="Liefern">Liefern</div>
+              <div class="Liefern" id="lieferBtn">Liefern</div>
             </div>
           </div>
         </div>
 
-        <div class="bestellung">Bestellung</div>
+        <div class="bestellung">
+          <h2>Bestellung</h2>
+          <ul id="bestell-liste" class="bestell-liste">
+            <li class="leer">Noch keine Artikel ausgewählt.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
