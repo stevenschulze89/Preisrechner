@@ -42,9 +42,13 @@ h1 {
 
 .Container-grid {
   display: grid;
+
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   width: 100%;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: gray;
 }
 
 .grid-item {
@@ -58,6 +62,7 @@ h1 {
 .kasten {
   display: flex;
   align-items: center;
+
   justify-content: center;
   min-height: 120px;
   padding: 1rem;
@@ -67,6 +72,13 @@ h1 {
   font-size: 19px;
   cursor: pointer;
   flex-direction: column;
+  width: 125px;
+  border-radius: 5px;
+  height: 50px;
+}
+.kasten:hover {
+  cursor: pointer;
+  background-color: rgba(71, 70, 69, 0.116);
 }
 
 .kasten:hover {
@@ -138,6 +150,30 @@ h1 {
 .Liefern {
   background-color: rgba(0, 140, 255, 0.8);
   color: #ffffff;
+
+  background-color: rgba(0, 60, 255, 0.74);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#gesamt {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: blue;
+}
+
+.gesamt {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
 }
 
 .bestellung {
@@ -148,6 +184,7 @@ h1 {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+
   gap: 1rem;
   font-size: clamp(1rem, 2vw, 1.2rem);
 }
@@ -193,4 +230,28 @@ h1 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 700;
   text-align: center;
+
+  width: 25%;
+  background-color: beige;
+  max-height: 70vh;
+  min-height: 150px;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.grid-item.selected {
+  background-color: #d4f7d4;
+  border: 1px solid #2fa02f;
+  border-radius: 4px;
+}
+
+.order-item {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+.order-item:last-child {
+  border-bottom: none;
 }
