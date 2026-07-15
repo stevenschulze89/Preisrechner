@@ -97,13 +97,15 @@
           </div>
           <div class="gesamt">
             Gesamt:
-            <div id="gesamt">0,00€</div>
+            <div id="total">0,00€</div>
           </div>
-          <div class="reset">Zurücksetzen</div>
+          <div class="reset" onclick="resetOrder()">Zurücksetzen</div>
           <div class="buttons-container">
             <div class="buttons">
-              <div class="here">Vor Ort</div>
-              <div class="Liefern" id="lieferBtn">Liefern</div>
+              <div class="here" onclick="vorOrt()">Vor Ort</div>
+              <div class="Liefern" id="lieferBtn" onclick="lieferung()">
+                Liefern
+              </div>
             </div>
           </div>
         </div>
@@ -112,7 +114,7 @@
           <h2>Bestellung</h2>
 
           <ul id="bestell-liste" class="bestell-liste">
-            <li class="leer">Noch keine Artikel ausgewählt.</li>
+            <li id="leer">Noch keine Artikel ausgewählt.</li>
           </ul>
           <div class="order-list"></div>
         </div>
